@@ -1,5 +1,5 @@
 //=============================внешние импорты===================================
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 //=============================рутовые стили===================================
 @import "fonts";
@@ -12,6 +12,216 @@
 
 
 //========основные стили============
+body {
+    font-family: var(--ff);
+    background-color: var(--primary-color);
+    height: 100dvh;
+    scrollbar-color: var(--secondary-color) var(--primary-color);
+}
+
+main {
+    height: 100%;
+}
+
+.grid-aside {
+    padding: 0 !important;
+    height: 100%;
+}
+
+.grid-aside__container {
+    display: grid;
+    grid-template-columns: minmax(180px, 313px) minmax(500px, auto);
+    height: 100%;
+
+    @include respond-to('tab') {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.aside {
+    background-color: var(--secondary-color);
+    padding-top: clamp-px(30, 60);
+    padding-bottom: clamp-px(30, 60);
+    height: 100%;
+    position: relative;
+
+    @include respond-to("tab") {
+        height: fit-content;
+        padding: 15px 20px;
+    }
+
+
+}
+
+.content {
+    padding: 0 20px;
+    padding-top: clamp-px(30, 60);
+    padding-bottom: clamp-px(30, 60);
+
+    @include respond-to('tab') {
+        padding: 20px 0;
+    }
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include respond-to('tab') {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.nav-item {
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+    background: transparent;
+    font-weight: 500;
+    font-size: clamp-px(12, 15);
+    letter-spacing: -0.02em;
+    color: var(--white);
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+        background: var(--gradient);
+        border-radius: 10px;
+    }
+
+    &.active {
+        background: var(--gradient);
+    }
+}
+
+.content-wrap {
+    overflow-y: auto;
+    max-height: 74dvh;
+    border-radius: 16px;
+    margin: 0 20px;
+    padding: clamp-px(15, 30);
+    height: 100%;
+    width: 100%;
+    background: var(--secondary-color);
+
+    @include respond-to('tab') {
+        margin: 0;
+        padding: 20px !important;
+    }
+}
+
+.spoilers-wrap {
+    max-height: 64dvh;
+    display: flex;
+    flex-direction: column;
+    gap: clamp-px(30, 50);
+}
+
+.spoiler-item {
+    padding: clamp-px(15, 20) clamp-px(20, 30);
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.spoiler__title {
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: var(--tertiary-color);
+
+    &::after {
+        content: "\f078";
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 600;
+        transform: rotate(0);
+        margin-left: auto;
+
+
+    }
+
+    &.active {
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.spoiler-content {
+    margin-top: 20px;
+}
+
+.pass_wrap {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+        margin-bottom: clamp-px(30, 50)
+    }
+
+}
+
+.pass_wrap__title-box {
+    display: flex;
+    flex-direction: column;
+    gap: clamp-px(10, 15);
+    margin-bottom: clamp-px(20, 30);
+}
+
+.pass__title {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--black);
+}
+
+.pass__subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--black);
+}
+
+.pass__item-card {}
+
+.pass__item {
+    border-radius: 16px;
+    min-height: 77px;
+    background: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.pass__item-top {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #333;
+}
+
+.pass__item-name {
+    font-weight: 500;
+    font-size: clamp-px(12, 14);
+    color: var(--white);
+    text-align: center;
+}
+
+.pass__item__bottom {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pass__item__val {
+    font-weight: 500;
+    font-size: clamp-px(12, 14);
+    color: var(--white);
+    text-align: center;
+}
 
 //==================================
 

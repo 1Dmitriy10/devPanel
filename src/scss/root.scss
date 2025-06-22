@@ -5,7 +5,7 @@
 
     //container
     .container {
-        max-width: 1400px;
+        max-width: 1440px;
         margin: 0 auto;
 
         @include respond-to("pc") {
@@ -39,8 +39,16 @@
     }
 
     //===========Шрифты============
-
+    --ff: "Roboto",
+    sans-serif;
     //===========Цвета===========
+    --primary-color:#242C3B;
+    --secondary-color:#364059;
+    --tertiary-color:#37B6E9;
+    --white:#fff;
+    --black:#333;
+
+    --gradient: linear-gradient(90deg, #37b6e9 0%, #4b4ced 100%);
 
     // ===========gap===========
     --gap: 20px;

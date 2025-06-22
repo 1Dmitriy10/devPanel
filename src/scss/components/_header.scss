@@ -1,0 +1,86 @@
+.header {
+    padding: 0 20px;
+    background: var(--gradient);
+    padding-top: clamp-px(15, 20);
+    padding-bottom: clamp-px(15, 20);
+}
+
+.header__container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__search-box {
+    display: flex;
+    align-items: center;
+    gap: clamp-px(15, 30);
+    width: 100%;
+
+    @include respond-to('tel') {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.search-input {
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    padding: 8px 16px;
+    width: 100%;
+    max-width: 460px;
+
+
+    font-weight: 300;
+    font-size: 14px;
+    color: #c4c4c4;
+}
+
+.btn {
+    border-radius: 6px;
+    padding: clamp-px(5, 7) clamp-px(15, 30);
+
+    background: var(--white);
+    font-family: var(--ff);
+    font-weight: 400;
+    font-size: clamp-px(12, 16);
+    color: var(--black);
+    transition: 0.3s;
+    border: 1px solid var(--white);
+
+    &:hover {
+        transition: 0.3s;
+        background-color: transparent;
+        border: 1px solid var(--tertiary-color);
+        color: var(--white);
+    }
+}
+
+.avatar-box {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    @include respond-to('tel') {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+
+.avatar__name {
+    font-weight: 400;
+    font-size: clamp-px(12, 16);
+    color: var(--white);
+
+    @include respond-to('tel') {
+        text-align: center;
+    }
+}
+
+.avatar__icon {
+    border-radius: 16px;
+    width: clamp-px(65, 100);
+    height: clamp-px(65, 100);
+    background-color: grey;
+}
